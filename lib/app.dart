@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/custom_drawer.dart';
 import 'package:tridimensional_drawer/tridimensional_drawer.dart';
 
 import 'main_page.dart';
@@ -21,14 +22,11 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return TridimensionalDrawer(
-      drawer: Opacity(
-        opacity: 0.8,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.black,
-          ),
-        ),
-      ),
+      // drawer: Container(
+      // decoration: BoxDecoration(
+      //       color: Colors.black87,
+      //     ),),
+      drawer: CustomDrawer(),
       mainPage: MainPage(controller),
       backgroundPage: Container(
           height: MediaQuery.of(context).size.height,
