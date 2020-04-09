@@ -22,18 +22,18 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return TridimensionalDrawer(
-      // drawer: Container(
-      // decoration: BoxDecoration(
-      //       color: Colors.black87,
-      //     ),),
       drawer: CustomDrawer(),
       mainPage: MainPage(controller),
-      backgroundPage: Container(
+      backgroundPage: GestureDetector(
+        onTap: () => controller.close(),
+        child: Container(
           height: MediaQuery.of(context).size.height,
           child: Image.asset(
             'assets/images/NewYork.jpg',
             fit: BoxFit.cover,
-          )),
+          ),
+        ),
+      ),
       controller: controller,
     );
   }
